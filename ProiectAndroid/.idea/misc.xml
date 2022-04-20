@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/button_minus.xml" value="0.244" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cart_background.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cat_background.xml" value="0.2595" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cat_background1.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cat_background2.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cat_background3.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/cat_background4.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/navigation.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/orange_button.xml" value="0.2595" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/orange_light_banner.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/pink_button.xml" value="0.156" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/search_background.xml" value="0.1885" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/drawable/viewholder_popular.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_bottom.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.264" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_cart_list.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_login2.xml" value="0.14130434782608695" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_second.xml" value="0.19746376811594202" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/activity_show_detail.xml" value="0.264" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/content_second.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_dashboard2.xml" value="0.1796875" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_view_holder.xml" value="0.12360688956433637" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/fragment_viewcategory.xml" value="0.1" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/viewholder_category.xml" value="0.4" />
+        <entry key="..\:/ProiectAndroid/app/src/main/res/layout/viewholder_popular.xml" value="0.4" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
