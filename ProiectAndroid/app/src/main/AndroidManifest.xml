@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrder">
         <activity
-            android:name=".Activity.CartListActivity"
+            android:name=".Activity.CartListFragment"
             android:exported="false" />
         <activity
             android:name=".Activity.CategoryActivity"
