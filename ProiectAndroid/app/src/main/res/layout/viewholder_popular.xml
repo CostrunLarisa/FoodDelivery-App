@@ -54,10 +54,9 @@
         android:textColor="#FF3D00"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/price"
-        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintStart_toEndOf="@+id/price"
         app:layout_constraintTop_toBottomOf="@+id/pic"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/addBtn"
