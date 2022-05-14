@@ -14,6 +14,9 @@
             android:name=".Activity.CartListActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.CategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ShowDetailActivity"
             android:exported="false" />
         <activity
