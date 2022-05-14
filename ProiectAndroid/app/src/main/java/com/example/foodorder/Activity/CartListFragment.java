@@ -1,12 +1,17 @@
 package com.example.foodorder.Activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -17,60 +22,39 @@ import com.example.foodorder.Interface.ChangeNumberItemsListener;
 import com.example.foodorder.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class CartListActivity extends AppCompatActivity {
+public class CartListFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
-    TextView totalFeeTxt, taxTxt, deliveryTxt, totalTxt, emptyTxt;
+    TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
     private double tax;
     private ScrollView scrollView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart_list);
 
-        managementCart = new ManagementCart(this);
-
-        initView();
-        initList();
-        CalculateCart();
-        bottomNavigation();
+        managementCart = new ManagementCart(this.getContext());
     }
-
-    private void bottomNavigation() {
-        FloatingActionButton floatingActionButton = findViewById(R.id.menuCart);
-        LinearLayout homeBtn = findViewById(R.id.navigation_home);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CartListActivity.this, CartListActivity.class));
-            }
-        });
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CartListActivity.this, MainActivity.class));
-            }
-        });
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_cart, container, false);
     }
-
     private void initView() {
-        recyclerViewList = findViewById(R.id.recyclerView);
-        totalFeeTxt = findViewById(R.id.totalFeeTxt);
-        taxTxt = findViewById(R.id.taxTxt);
-        deliveryTxt = findViewById(R.id.deliveryTxt);
-        totalTxt = findViewById(R.id.totalTxt);
-        emptyTxt = findViewById(R.id.emptyTxt);
-        scrollView = findViewById(R.id.scrollView3);
-        recyclerViewList = findViewById(R.id.cartView);
+        recyclerViewList = this.getView().findViewById(R.id.recyclerView);
+        totalFeeTxt = this.getView().findViewById(R.id.totalFeeTxt);
+        deliveryTxt = this.getView().findViewById(R.id.deliveryTxt);
+        totalTxt = this.getView().findViewById(R.id.totalTxt);
+        emptyTxt = this.getView().findViewById(R.id.emptyTxt);
+        scrollView = this.getView().findViewById(R.id.scrollView3);
+        recyclerViewList = this.getView().findViewById(R.id.cartView);
     }
 
     private void initList() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        adapter = new CartListAdapter(managementCart.getListCart(), this, new ChangeNumberItemsListener() {
+        adapter = new CartListAdapter(managementCart.getListCart(), this.getContext(), new ChangeNumberItemsListener() {
             @Override
             public void changed() {
                 CalculateCart();
@@ -96,8 +80,15 @@ public class CartListActivity extends AppCompatActivity {
         double itemTotal = Math.round(managementCart.getTotalFee() * 100) / 100;
 
         totalFeeTxt.setText("$" + itemTotal);
-        taxTxt.setText("$" + tax);
         deliveryTxt.setText("$" + delivery);
         totalTxt.setText("$" + total);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView();
+        initList();
+        CalculateCart();
     }
 }

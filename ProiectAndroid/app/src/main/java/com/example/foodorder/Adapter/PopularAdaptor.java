@@ -1,5 +1,6 @@
 package com.example.foodorder.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -36,7 +37,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderFragment holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderFragment holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(popularFood.get(position).getTitle());
         holder.price.setText(String.valueOf(popularFood.get(position).getPrice()));
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(popularFood.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());

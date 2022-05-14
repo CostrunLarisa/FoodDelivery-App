@@ -9,14 +9,15 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.foodorder.Adapter.CategoryAdaptor;
+import com.example.foodorder.Activity.CartListFragment;
 import com.example.foodorder.Adapter.PopularAdaptor;
 import com.example.foodorder.Domain.CategoryDomain;
 import com.example.foodorder.Domain.FoodDomain;
-import com.example.foodorder.Fragments.CartFragment;
 import com.example.foodorder.Fragments.HomeFragment;
 import com.example.foodorder.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -81,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    fragment = new HomeFragment();
-                    loadFragment(fragment);
+                    Intent intent = new Intent(MainActivity.this,MainActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_cart:
-                    fragment = new CartFragment();
+                    fragment = new CartListFragment();
                     loadFragment(fragment);
                     return true;
             }
