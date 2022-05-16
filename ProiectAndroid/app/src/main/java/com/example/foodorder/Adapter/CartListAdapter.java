@@ -1,5 +1,6 @@
 package com.example.foodorder.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(foodDomains.get(position).getTitle());
         holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getPrice()));
         holder.totalEachItem.setText(String.valueOf(Math.round((foodDomains.get(position).getNumberInCart() * foodDomains.get(position).getPrice()) * 100) / 100));

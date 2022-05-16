@@ -13,15 +13,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.example.foodorder.Adapter.CategoryAdaptor;
-import com.example.foodorder.Activity.CartListFragment;
+import com.example.foodorder.Fragments.CartListFragment;
 import com.example.foodorder.Adapter.PopularAdaptor;
 import com.example.foodorder.Domain.CategoryDomain;
 import com.example.foodorder.Domain.FoodDomain;
-import com.example.foodorder.Fragments.HomeFragment;
 import com.example.foodorder.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,7 +27,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView.Adapter adapter, adapterPopular;
+//    private RecyclerView.Adapter adapter, adapterPopular;
+    private PopularAdaptor adapterPopular;
+    private CategoryAdaptor adapter;
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ActionBar toolbar;
     private View button;

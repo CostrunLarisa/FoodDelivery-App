@@ -11,7 +11,6 @@ import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -19,8 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorder.Adapter.PopularAdaptor;
 import com.example.foodorder.Domain.FoodDomain;
-import com.example.foodorder.Fragments.CartFragment;
-import com.example.foodorder.Fragments.HomeFragment;
+import com.example.foodorder.Fragments.CartListFragment;
 import com.example.foodorder.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

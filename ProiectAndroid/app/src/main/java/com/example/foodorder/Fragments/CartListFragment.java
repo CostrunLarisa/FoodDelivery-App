@@ -1,4 +1,4 @@
-package com.example.foodorder.Activity;
+package com.example.foodorder.Fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,13 +17,15 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.foodorder.Adapter.CartListAdapter;
+import com.example.foodorder.Adapter.PopularAdaptor;
 import com.example.foodorder.Helper.ManagementCart;
 import com.example.foodorder.Interface.ChangeNumberItemsListener;
 import com.example.foodorder.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CartListFragment extends Fragment {
-    private RecyclerView.Adapter adapter;
+//    private RecyclerView.Adapter adapter;
+    private CartListAdapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
     TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
