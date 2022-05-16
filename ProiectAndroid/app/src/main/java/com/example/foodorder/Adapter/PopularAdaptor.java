@@ -6,28 +6,29 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodorder.Activity.ShowDetailActivity;
-import com.example.foodorder.Domain.CategoryDomain;
 import com.example.foodorder.Domain.FoodDomain;
 import com.example.foodorder.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolderFragment> {
+public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolderFragment> implements Filterable {
     ArrayList<FoodDomain> popularFood;
+    ArrayList<FoodDomain> popularFoodFull;
 
     public PopularAdaptor(ArrayList<FoodDomain> popularFood) {
         this.popularFood = popularFood;
+        popularFoodFull =  new ArrayList<>(popularFood);
     }
 
     @Override
@@ -59,6 +60,42 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
     public int getItemCount() {
         return popularFood.size();
     }
+
+//    @Override
+    public Filter getFilter() {
+        return foodFilter;
+    }
+
+    private Filter foodFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<FoodDomain> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(popularFoodFull); // display all food when no text detected
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (FoodDomain item : popularFoodFull) {
+                    if (item.getTitle().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            popularFood.clear();
+            popularFood.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class ViewHolderFragment extends RecyclerView.ViewHolder {
         TextView title, price, addBtn;
