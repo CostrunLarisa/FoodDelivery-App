@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 
 import com.example.foodorder.Adapter.CategoryAdaptor;
 import com.example.foodorder.Activity.CartListFragment;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ActionBar toolbar;
     private View button;
+    Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +51,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bt = (Button) findViewById(R.id.toShare);
+
+        bt.setOnClickListener(new View.OnClickListener () {
+
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String body = "Descarca aplicatia pentru a primi o comanda gratuita!";
+                String sub = "Prima comanda gratis!";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,sub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,body);
+                startActivity(Intent.createChooser(myIntent, "Share Using"));
+            }
+        });
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //toolbar.setTitle("Shop");
     }
+
+
 
     private void recyclerViewCategory() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

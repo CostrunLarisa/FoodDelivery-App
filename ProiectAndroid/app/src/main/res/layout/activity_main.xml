@@ -188,6 +188,12 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <Button
+                android:id="@+id/toShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spune-le prietenilor" />
+
         </LinearLayout>
     </ScrollView>
     </FrameLayout>
