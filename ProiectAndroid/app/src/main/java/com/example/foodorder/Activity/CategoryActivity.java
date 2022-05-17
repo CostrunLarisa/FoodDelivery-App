@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -81,6 +83,21 @@ public class CategoryActivity extends AppCompatActivity {
             return false;
         }
     };
+
+//    View svSearch = View.findViewById(R.id.search_background);
+//
+//        svSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//        @Override
+//        public boolean onQueryTextSubmit(String query) {
+//            return false;
+//        }
+//
+//        @Override
+//        public boolean onQueryTextChange(String newText) {
+//            driverListAdapter.getFilter().filter(newText);
+//            return false;
+//        }
+//    });
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

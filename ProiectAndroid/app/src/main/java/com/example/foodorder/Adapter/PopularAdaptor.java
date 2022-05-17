@@ -50,7 +50,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-                intent.putExtra("object", (Parcelable) popularFood.get(position));
+                intent.putExtra("object", popularFood.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
