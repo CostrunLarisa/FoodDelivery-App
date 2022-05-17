@@ -40,6 +40,32 @@ public class CategoryActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapterPopular.getFilter().filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapterPopular.getFilter().filter(newText);
+                return true;
+            }
+        });
+
+        return true;
+    }
+
     private void recyclerViewPopular() {
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerViewPopularList = findViewById(R.id.recyclerView2);
@@ -79,46 +105,6 @@ public class CategoryActivity extends AppCompatActivity {
             return false;
         }
     };
-
-//    View svSearch = View.findViewById(R.id.search_background);
-//
-//        svSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//        @Override
-//        public boolean onQueryTextSubmit(String query) {
-//            return false;
-//        }
-//
-//        @Override
-//        public boolean onQueryTextChange(String newText) {
-//            driverListAdapter.getFilter().filter(newText);
-//            return false;
-//        }
-//    });
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_menu, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-
-        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapterPopular.getFilter().filter(newText);
-                return false;
-            }
-        });
-        return true;
-    }
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
