@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class CartListFragment extends Fragment {
     private CartListAdapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
-    TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
+    TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt, finalTxt, finishBtn;
     private double tax;
     private ScrollView scrollView;
 
@@ -81,9 +82,9 @@ public class CartListFragment extends Fragment {
         double total = Math.round((managementCart.getTotalFee() + tax + delivery) * 100) / 100;
         double itemTotal = Math.round(managementCart.getTotalFee() * 100) / 100;
 
-        totalFeeTxt.setText("$" + itemTotal);
-        deliveryTxt.setText("$" + delivery);
-        totalTxt.setText("$" + total);
+        totalFeeTxt.setText(itemTotal + " lei");
+        deliveryTxt.setText(delivery + " lei");
+        totalTxt.setText(total + " lei");
     }
 
     @Override

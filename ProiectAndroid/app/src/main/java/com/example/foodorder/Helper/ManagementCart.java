@@ -35,7 +35,7 @@ public class ManagementCart {
             listFood.add(item);
         }
         tinyDB.putListObject("CartList", listFood);
-        Toast.makeText(context, "Added To Your Cart", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Adaugat in cos", Toast.LENGTH_SHORT).show();
     }
 
     public ArrayList<FoodDomain> getListCart() {

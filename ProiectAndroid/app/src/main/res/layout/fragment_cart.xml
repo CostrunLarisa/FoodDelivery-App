@@ -158,7 +158,7 @@
         android:id="@+id/emptyTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Cart Is Empty"
+        android:text="Nu ai produse adaugate in cos"
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
