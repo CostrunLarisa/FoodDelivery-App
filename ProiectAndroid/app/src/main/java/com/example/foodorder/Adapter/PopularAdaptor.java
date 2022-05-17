@@ -2,12 +2,9 @@ package com.example.foodorder.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,9 +17,8 @@ import com.example.foodorder.Domain.FoodDomain;
 import com.example.foodorder.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolderFragment> implements Filterable {
+public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolderFragment> {
     ArrayList<FoodDomain> popularFood;
     ArrayList<FoodDomain> popularFoodFull;
 
@@ -61,41 +57,10 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
         return popularFood.size();
     }
 
-//    @Override
-    public Filter getFilter() {
-        return foodFilter;
+    public void filterList(ArrayList<FoodDomain> filteredList) {
+        popularFood = filteredList;
+        notifyDataSetChanged();
     }
-
-    private Filter foodFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<FoodDomain> filteredList = new ArrayList<>();
-
-            if (constraint == null || constraint.length() == 0) {
-                filteredList.addAll(popularFoodFull); // display all food when no text detected
-            } else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
-                for (FoodDomain item : popularFoodFull) {
-                    if (item.getTitle().toLowerCase().contains(filterPattern)) {
-                        filteredList.add(item);
-                    }
-                }
-            }
-
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            popularFood.clear();
-            popularFood.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
 
     public class ViewHolderFragment extends RecyclerView.ViewHolder {
         TextView title, price, addBtn;

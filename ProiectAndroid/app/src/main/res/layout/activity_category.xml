@@ -32,23 +32,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.google.android.material.navigation.NavigationView
-                    android:id="@+id/searchMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:menu="@menu/search_menu" />
-
-
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingTop="10dp"
-                    android:text="Produse"
+                    android:text="Toate produsele"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_search_orange"
+                    android:hint="Cauta produs..."
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/orange"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView2"
