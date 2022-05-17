@@ -5,16 +5,16 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:focusable="true"
     android:focusableInTouchMode="true"
+    android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -47,15 +47,15 @@
                     android:id="@+id/edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_search_orange"
-                    android:hint="Cauta produs..."
                     android:layout_margin="16dp"
-                    android:backgroundTint="@color/orange"/>
+                    android:backgroundTint="@color/orange"
+                    android:drawableLeft="@drawable/ic_search_orange"
+                    android:hint="Cauta produs..." />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView2"
                     android:layout_width="match_parent"
-                    android:layout_height="473dp"
+                    android:layout_height="wrap_content"
                     android:paddingLeft="10dp">
 
                 </androidx.recyclerview.widget.RecyclerView>
@@ -75,7 +75,7 @@
         app:itemBackground="@color/faded_gray"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/navigation" >
+        app:menu="@menu/navigation">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
