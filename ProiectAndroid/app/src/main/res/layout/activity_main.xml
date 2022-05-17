@@ -104,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="11dp"
                         android:layout_marginTop="4dp"
-                        android:text="20 Aprilie - 30 Mai"
+                        android:text="la prima comanda"
                         android:textSize="10sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -120,17 +120,19 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/delivery" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <Button
+                        android:id="@+id/toShare"
                         android:layout_width="115dp"
-                        android:layout_height="29dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
                         android:layout_marginEnd="6dp"
+                        android:padding="10dp"
                         android:background="@drawable/pink_button"
                         android:gravity="center"
-                        android:text="Comanda acum"
+                        android:text="Spune-le prietenilor"
                         android:textSize="12sp"
                         android:textStyle="bold"
+                        android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -194,12 +196,6 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_margin="20dp"/>
-
-            <Button
-                android:id="@+id/toShare"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Spune-le prietenilor" />
 
         </LinearLayout>
     </ScrollView>
