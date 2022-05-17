@@ -32,31 +32,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Nume categorie"
-                        android:textColor="@color/orange"
-                        android:textSize="22sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
                 <com.google.android.material.navigation.NavigationView
                     android:id="@+id/searchMenu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:menu="@menu/search_menu"/>
+                    app:menu="@menu/search_menu" />
+
 
                 <TextView
                     android:id="@+id/textView11"
