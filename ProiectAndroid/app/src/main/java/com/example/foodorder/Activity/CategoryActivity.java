@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,19 +30,14 @@ import java.util.ArrayList;
 public class CategoryActivity extends AppCompatActivity {
     private PopularAdaptor adapterPopular;
     private RecyclerView recyclerViewPopularList;
-    private ActionBar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         recyclerViewPopular();
-//        toolbar = getSupportActionBar();
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-//        toolbar.setTitle("Shop");
     }
 
     private void recyclerViewPopular() {
@@ -60,19 +56,19 @@ public class CategoryActivity extends AppCompatActivity {
 
         adapterPopular = new PopularAdaptor(foodList);
         recyclerViewPopularList.setAdapter(adapterPopular);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
+        recyclerViewPopularList.addItemDecoration(dividerItemDecoration);
 
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(CategoryActivity.this,MainActivity.class);
+                    Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_cart:
