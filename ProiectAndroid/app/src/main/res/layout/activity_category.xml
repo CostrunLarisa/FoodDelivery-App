@@ -51,22 +51,12 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <SearchView
-                    android:id="@+id/simpleSearchView"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="Cauta produs"
-                    android:layout_width="345dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:background="@drawable/search_background"
-                    android:drawablePadding="10dp"
-                    android:ems="10"
-                    android:hint=""
-                    android:inputType="textPersonName"
-                    android:textSize="15sp"
-                    android:textStyle="italic"/>
 
+                <com.google.android.material.navigation.NavigationView
+                    android:id="@+id/searchMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:menu="@menu/search_menu"/>
 
                 <TextView
                     android:id="@+id/textView11"
@@ -89,6 +79,7 @@
 
             </LinearLayout>
         </ScrollView>
+
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -101,6 +92,8 @@
         app:itemBackground="@color/faded_gray"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
